@@ -1,0 +1,207 @@
+/* ==========================================================================
+   GLOBAL & SHARED COMPONENTS STYLESHEET
+   Legalize.idn
+   ========================================================================== */
+
+:root {
+  --global-primary: #0b7077;
+  --global-dark: #111827;
+  --global-gray: #4b5563;
+  --global-light-gray: #555555;
+  --global-transition: all 0.25s ease-in-out;
+}
+
+/* ==========================================================================
+   GLOBAL / BALI HEADER & NAVBAR
+   ========================================================================== */
+.bali-header,
+.global-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  padding: 0.6rem 0;
+}
+
+/* ==========================================================================
+   BRAND DROPDOWN / SWITCHER (LOGO & BURGER MENU)
+   ========================================================================== */
+.brand-dropdown-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-switcher-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--global-transition);
+  margin-right: 1rem;
+}
+
+.brand-switcher-btn:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.brand-menu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  color: #1f2937;
+  font-size: 1.25rem;
+  transition: var(--global-transition);
+}
+
+.brand-switcher-btn:hover .brand-menu-icon {
+  background-color: var(--global-primary);
+  color: #ffffff;
+}
+
+/* Hover bridge to prevent flickering when moving cursor to dropdown */
+.brand-dropdown-wrap::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  display: none;
+}
+
+.brand-dropdown-wrap:hover::after {
+  display: block;
+}
+
+.brand-dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  transform: none !important;
+  min-width: 210px;
+  padding: 0.6rem 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  background-color: #ffffff !important;
+  margin-top: 8px !important;
+  z-index: 1050;
+  display: none;
+}
+
+/* Show dropdown below on hover */
+@media (min-width: 992px) {
+  .brand-dropdown-wrap:hover .brand-dropdown-menu {
+    display: block !important;
+    animation: brandDropdownFade 0.2s ease forwards;
+  }
+}
+
+.brand-switch-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  transition: var(--global-transition);
+  text-align: center;
+}
+
+.brand-switch-item img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.brand-switch-item:hover {
+  background-color: #f8fafc;
+}
+
+.brand-dropdown-hint {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 0.25rem 0.85rem 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@keyframes brandDropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-brand img {
+  width: 160px;
+  height: auto;
+}
+
+.brand-bali-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #111827;
+  line-height: 1.1;
+}
+
+.brand-dot {
+  color: #111827;
+}
+
+.brand-sub {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #555555;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+
+.bali-nav .nav-link,
+.global-nav .nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4b5563;
+  padding: 0.5rem 1.1rem !important;
+  transition: var(--global-transition);
+}
+
+.bali-nav .nav-link:hover,
+.global-nav .nav-link:hover {
+  color: var(--global-primary);
+}
+
+.bali-nav .nav-link.active,
+.global-nav .nav-link.active {
+  color: #111827;
+  font-weight: 700;
+}
+
+/* Toggler Customization */
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}

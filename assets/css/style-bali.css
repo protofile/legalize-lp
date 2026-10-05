@@ -1,0 +1,962 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  --bali-primary: #366352;
+  --bali-primary-dark: #16332c;
+  --bali-primary-light: #28574b;
+  --bali-accent-mint: #e8f3f0;
+  --bali-tag-green: #2d7a68;
+  --bali-gold: #f59e0b;
+  --bali-text-dark: #111827;
+  --bali-text-muted: #52605d;
+  --bali-border: #e5e7eb;
+  --bali-card-bg: #ffffff;
+  --font-jakarta: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Global Reset & Typography */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-jakarta);
+  color: var(--bali-text-dark);
+  background-color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-jakarta);
+  font-weight: 700;
+  color: var(--bali-text-dark);
+  letter-spacing: -0.3px;
+}
+
+a {
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* ==========================================================================
+   HEADER / NAVBAR
+   ========================================================================== */
+.bali-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  padding: 0.6rem 0;
+}
+
+.brand-bali-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #111827;
+  line-height: 1.1;
+}
+
+.brand-dot {
+  color: #111827;
+}
+
+.brand-sub {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #555555;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+
+.bali-nav .nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4b5563;
+  padding: 0.5rem 1.1rem !important;
+  transition: var(--transition);
+}
+
+.bali-nav .nav-link:hover {
+  color: var(--bali-primary);
+}
+
+.bali-nav .nav-link.active {
+  color: #111827;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   HERO SECTION (PAGE 1)
+   ========================================================================== */
+.bali-hero-section {
+  position: relative;
+  background-color: var(--bali-primary);
+  color: #ffffff;
+  overflow: hidden;
+  min-height: 560px;
+}
+
+.bali-hero-row {
+  min-height: 560px;
+}
+
+.bali-hero-left {
+  padding-top: 4.5rem;
+  padding-bottom: 3.5rem;
+  padding-right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.bali-hero-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bali-hero-tag::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.bali-hero-title {
+  font-size: clamp(2.3rem, 4vw, 3.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.bali-hero-title .hero-italic {
+  font-weight: 400;
+  font-style: italic;
+  display: block;
+}
+
+.bali-hero-subtitle {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
+  max-width: 530px;
+  margin-bottom: 2.2rem;
+}
+
+.bali-hero-btns {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-bali-white {
+  background-color: #ffffff;
+  color: var(--bali-primary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.75rem 1.8rem;
+  border-radius: 30px;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.btn-bali-white:hover {
+  background-color: #f3f4f6;
+  color: var(--bali-primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-bali-dark-pill {
+  background-color: var(--bali-primary-dark);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.75rem 1.8rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: var(--transition);
+}
+
+.btn-bali-dark-pill:hover {
+  background-color: #0f241f;
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Stats Row */
+.bali-hero-stats {
+  display: flex;
+  gap: 3.5rem;
+  padding-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  padding-top: 30px;
+  border-top: 1px solid #fff;
+}
+
+.stat-item-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+/* Hero Right Image */
+.bali-hero-right-img {
+  background-image: url('../images/bali/pexels-juli-anggara-276311785-38336310.jpg');
+  background-size: cover;
+  background-position: center center;
+  min-height: 100%;
+  position: relative;
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   PAGE 2: OUR SERVICES (WHAT WE DO)
+   ========================================================================== */
+.section-bali-services {
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+  background-color: #ffffff;
+}
+
+.bali-section-tag {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--bali-tag-green);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.bali-section-heading {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.bali-section-sub {
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-weight: 400;
+  margin-bottom: 3.5rem;
+}
+
+.bali-service-card {
+  background-color: #F6F6F3;
+  border: 1px solid #dedede;
+  border-radius: 16px;
+  padding: 2rem 1.6rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  transition: var(--transition);
+  position: relative;
+}
+
+.bali-service-card:hover {
+  transform: translateY(-5px);
+  border-color: #cce3dc;
+  box-shadow: 0 12px 28px rgba(31, 66, 57, 0.08);
+}
+
+.service-card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-card-action {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+.service-client-tag {
+  background-color: var(--bali-accent-mint);
+  color: var(--bali-primary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1.75rem;
+  align-self: center;
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.service-icon-box {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon-box img {
+  width: 100%;
+  height: 100%;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.service-desc {
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: #4b5563;
+  margin-bottom: 1.8rem;
+  min-height: 65px;
+  text-align: center;
+}
+
+.service-action-link {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111827;
+  display: inline-flex;
+  gap: 5px;
+}
+
+.service-action-link:hover {
+  color: var(--bali-tag-green);
+  gap: 8px;
+}
+
+/* ==========================================================================
+   PAGE 3: WHY LEGALIZE BALI
+   ========================================================================== */
+.section-bali-why {
+  background-color: var(--bali-primary);
+  color: #ffffff;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+}
+
+.section-bali-why::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/bali/pexels-pattjjee-18144499.jpg) no-repeat center;
+  background-size: cover;
+  opacity: 0.1;
+}
+
+.section-bali-why .container-fluid {
+  position: relative;
+  z-index: 2;
+}
+
+.why-left-title {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.why-left-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.65;
+  margin-bottom: 2.2rem;
+  max-width: 440px;
+}
+
+.why-stat-box-white {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.why-stat-big-num {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--bali-primary);
+  line-height: 1;
+}
+
+.why-stat-text {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--bali-primary);
+  line-height: 1.35;
+}
+
+.why-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.why-check-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.why-check-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.why-check-desc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.why-bottom-divider {
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+}
+
+.why-pillar-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.why-pillar-icon {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  background-color: #0c0800;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-pillar-icon img {
+  width: 32px;
+}
+
+.why-pillar-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.why-pillar-desc {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   PAGE 4: CLIENT STORIES (TESTIMONIALS)
+   ========================================================================== */
+.section-bali-testimonials {
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+  background-color: #ffffff;
+}
+
+.bali-testimonial-card {
+  background-color: var(--bali-primary);
+  border-radius: 16px;
+  padding: 2.4rem 2rem;
+  color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px rgba(31, 66, 57, 0.15);
+  transition: var(--transition);
+}
+
+.bali-testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(31, 66, 57, 0.22);
+}
+
+.testi-stars-row {
+  color: var(--bali-gold);
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.testi-quote-content {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  min-height: 75px;
+}
+
+.testi-client-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.testi-avatar-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--bali-primary-dark);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.testi-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.15rem;
+}
+
+.testi-case {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   PAGE 5: PACKAGES (SERVICE PACKAGES)
+   ========================================================================== */
+.section-bali-packages {
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+  background-color: #fafbfc;
+}
+
+.bali-pricing-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2.4rem 2rem;
+  border: 1px solid #e5e7eb;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: var(--transition);
+}
+
+.bali-pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.bali-pricing-card.featured-popular {
+  background-color: var(--bali-primary);
+  color: #ffffff;
+  border-color: var(--bali-primary);
+  box-shadow: 0 14px 35px rgba(31, 66, 57, 0.25);
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+.bali-pricing-card.featured-popular:hover {
+  transform: scale(1.03) translateY(-4px);
+}
+
+.popular-top-badge {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.pricing-target-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.bali-pricing-card.featured-popular .pricing-target-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-pack-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.4rem;
+}
+
+.bali-pricing-card.featured-popular .pricing-pack-title {
+  color: #ffffff;
+}
+
+.pricing-pack-price {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1.8rem;
+}
+
+.bali-pricing-card.featured-popular .pricing-pack-price {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pricing-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.pricing-features-list li {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.bali-pricing-card.featured-popular .pricing-features-list li {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.pricing-check-icon {
+  color: var(--bali-tag-green);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.bali-pricing-card.featured-popular .pricing-check-icon {
+  color: #6ee7b7;
+}
+
+.btn-pricing-outline {
+  width: 100%;
+  border: 1px solid #111827;
+  background-color: transparent;
+  color: #111827;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-radius: 30px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.btn-pricing-outline:hover {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+.btn-pricing-solid {
+  width: 100%;
+  background-color: var(--bali-primary-dark);
+  color: #ffffff;
+  border: 1px solid var(--bali-primary-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-radius: 30px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.btn-pricing-solid:hover {
+  background-color: #0d1e1a;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.pricing-footnote {
+  font-size: 0.75rem;
+  color: #6b7280;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 2.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   PAGE 6: GET IN TOUCH (CONTACT & FOOTER)
+   ========================================================================== */
+.section-bali-contact {
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+  background-color: #ffffff;
+}
+
+.contact-channels-list {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.contact-channel-item {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.channel-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--bali-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.channel-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.channel-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.channel-val {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.contact-channel-item:hover .channel-val {
+  color: var(--bali-tag-green);
+}
+
+/* Contact Form Box */
+.bali-contact-form-box {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 2.4rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.bali-form-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.bali-form-input {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  font-family: var(--font-jakarta);
+  color: #111827;
+  transition: var(--transition);
+  margin-bottom: 1.25rem;
+}
+
+.bali-form-input::placeholder {
+  color: #9ca3af;
+}
+
+.bali-form-input:focus {
+  outline: none;
+  border-color: var(--bali-primary);
+  box-shadow: 0 0 0 3px rgba(31, 66, 57, 0.12);
+}
+
+.btn-bali-submit {
+  width: 100%;
+  background-color: var(--bali-primary-dark);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.85rem 1.5rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.5rem;
+}
+
+.btn-bali-submit:hover {
+  background-color: #0d1e1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(22, 51, 44, 0.3);
+}
+
+/* Footer Bottom Bar */
+.bali-footer-bar {
+  background-color: var(--bali-primary);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bali-footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .bali-hero-left {
+    padding-right: 0;
+  }
+
+  .bali-hero-right-img {
+    min-height: 380px;
+  }
+
+  .bali-pricing-card.featured-popular {
+    transform: none;
+    margin: 1.5rem 0;
+  }
+
+  .why-stat-box-white {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .bali-hero-stats {
+    gap: 1.8rem;
+    width: 100%;
+    gap: 0
+  }
+
+  .stat-item-block {
+    max-width: 30%;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 22px;
+  }
+
+  .bali-footer-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+}
