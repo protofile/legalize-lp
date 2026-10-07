@@ -21,6 +21,10 @@
   <!-- Bootstrap Icons CSS -->
   <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
 
+  <!-- Slick Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
   <!-- Global Shared Stylesheet -->
   <link rel="stylesheet" href="assets/css/global.css">
 
@@ -34,7 +38,7 @@
        HEADER & NAVIGATION BAR
        ========================================================================== -->
   <header class="bali-header">
-    <div class="container-fluid px-lg-5">
+    <div class="container">
       <nav class="navbar navbar-expand-lg py-2">
         <div class="brand-dropdown-wrap dropdown">
           <a class="navbar-brand brand-switcher-btn" href="#home" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -86,10 +90,10 @@
          PAGE 1: HERO SECTION
          ========================================================================== -->
     <section class="bali-hero-section" id="home">
-      <div class="container-fluid px-0">
+      <div class="container">
         <div class="row g-0 bali-hero-row align-items-stretch">
           <!-- Left Column Content -->
-          <div class="col-lg-7 col-xl-7 ps-lg-5 pe-lg-4 px-4 bali-hero-left">
+          <div class="col-lg-7 col-xl-7 pe-lg-4 px-3 px-lg-0 bali-hero-left">
             <div class="bali-hero-tag">LEGAL &amp; BUSINESS SETUP SERVICE</div>
 
             <h1 class="bali-hero-title">
@@ -125,7 +129,9 @@
           </div>
 
           <!-- Right Column Image (Balinese Temple Gate) -->
-          <div class="col-lg-5 col-xl-5 bali-hero-right-img"></div>
+          <div class="col-lg-5 col-xl-5 bali-hero-right-col">
+            <div class="bali-hero-right-img"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -134,7 +140,7 @@
          PAGE 2: OUR SERVICES (WHAT WE DO)
          ========================================================================== -->
     <section class="section-bali-services" id="services">
-      <div class="container-fluid px-lg-5">
+      <div class="container">
         <div class="text-center mb-5">
           <span class="bali-section-tag">WHAT WE DO</span>
           <h2 class="bali-section-heading">Our services</h2>
@@ -238,7 +244,7 @@
          PAGE 3: WHY LEGALIZE BALI
          ========================================================================== -->
     <section class="section-bali-why" id="about">
-      <div class="container-fluid px-lg-5">
+      <div class="container">
         <div class="row g-5 align-items-center">
           <!-- Left Column -->
           <div class="col-lg-5">
@@ -336,66 +342,116 @@
          PAGE 4: CLIENT STORIES (TESTIMONIALS)
          ========================================================================== -->
     <section class="section-bali-testimonials" id="testimonials">
-      <div class="container-fluid px-lg-5">
-        <div class="text-center mb-5">
-          <span class="bali-section-tag">CLIENT STORIES</span>
-          <h2 class="bali-section-heading">What our clients say</h2>
-          <p class="bali-section-sub">A few stories from clients' legal journeys with Legalize Bali.</p>
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+          <div class="text-center text-md-start flex-grow-1">
+            <span class="bali-section-tag">CLIENT STORIES</span>
+            <h2 class="bali-section-heading mb-0">What our clients say</h2>
+            <p class="bali-section-sub mb-0">A few stories from clients' legal journeys with Legalize Bali.</p>
+          </div>
+          <div class="d-none d-md-flex gap-2">
+            <button class="bali-slider-nav-btn prev-btn" aria-label="Previous testimonial" type="button">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="bali-slider-nav-btn next-btn" aria-label="Next testimonial" type="button">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
         </div>
 
-        <div class="row g-4">
-          <!-- Testimonial 1 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="bali-testimonial-card">
-              <div>
-                <div class="testi-stars-row">★ ★ ★ ★ ★</div>
-                <p class="testi-quote-content">
-                  "The process was clear and fast — every step was guided until our PMA was officially established."
-                </p>
-              </div>
-              <div class="testi-client-row">
-                <div class="testi-avatar-circle">A</div>
+        <div class="bali-testimonial-slider-wrapper">
+          <div class="bali-testimonial-slider-grid">
+            <!-- Testimonial 1 -->
+            <div class="bali-testimonial-slide-item">
+              <div class="bali-testimonial-card">
                 <div>
-                  <h4 class="testi-name">Andra P.</h4>
-                  <p class="testi-case">PT PMA — F&amp;B</p>
+                  <div class="testi-stars-row">★ ★ ★ ★ ★</div>
+                  <p class="testi-quote-content">
+                    "The process was clear and fast — every step was guided until our PMA was officially established."
+                  </p>
+                </div>
+                <div class="testi-client-row">
+                  <div class="testi-avatar-circle">A</div>
+                  <div>
+                    <h4 class="testi-name">Andra P.</h4>
+                    <p class="testi-case">PT PMA — F&amp;B</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Testimonial 2 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="bali-testimonial-card">
-              <div>
-                <div class="testi-stars-row">★ ★ ★ ★ ★</div>
-                <p class="testi-quote-content">
-                  "The team was very responsive — a complicated KITAS application felt simple and finished on time."
-                </p>
-              </div>
-              <div class="testi-client-row">
-                <div class="testi-avatar-circle">M</div>
+            <!-- Testimonial 2 -->
+            <div class="bali-testimonial-slide-item">
+              <div class="bali-testimonial-card">
                 <div>
-                  <h4 class="testi-name">Michael T.</h4>
-                  <p class="testi-case">Work KITAS</p>
+                  <div class="testi-stars-row">★ ★ ★ ★ ★</div>
+                  <p class="testi-quote-content">
+                    "The team was very responsive — a complicated KITAS application felt simple and finished on time."
+                  </p>
+                </div>
+                <div class="testi-client-row">
+                  <div class="testi-avatar-circle">M</div>
+                  <div>
+                    <h4 class="testi-name">Michael T.</h4>
+                    <p class="testi-case">Work KITAS</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Testimonial 3 -->
-          <div class="col-lg-4 col-md-12">
-            <div class="bali-testimonial-card">
-              <div>
-                <div class="testi-stars-row">★ ★ ★ ★ ★</div>
-                <p class="testi-quote-content">
-                  "Our contract was drafted clearly and thoroughly, so we run our partnership with real peace of mind."
-                </p>
-              </div>
-              <div class="testi-client-row">
-                <div class="testi-avatar-circle">S</div>
+            <!-- Testimonial 3 -->
+            <div class="bali-testimonial-slide-item">
+              <div class="bali-testimonial-card">
                 <div>
-                  <h4 class="testi-name">Sarah L.</h4>
-                  <p class="testi-case">Agreement Drafting</p>
+                  <div class="testi-stars-row">★ ★ ★ ★ ★</div>
+                  <p class="testi-quote-content">
+                    "Our contract was drafted clearly and thoroughly, so we run our partnership with real peace of mind."
+                  </p>
+                </div>
+                <div class="testi-client-row">
+                  <div class="testi-avatar-circle">S</div>
+                  <div>
+                    <h4 class="testi-name">Sarah L.</h4>
+                    <p class="testi-case">Agreement Drafting</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 (Dummy Item 1) -->
+            <div class="bali-testimonial-slide-item">
+              <div class="bali-testimonial-card">
+                <div>
+                  <div class="testi-stars-row">★ ★ ★ ★ ★</div>
+                  <p class="testi-quote-content">
+                    "Incredible support setting up our local PT in Seminyak. Fast, transparent, and completely hassle-free."
+                  </p>
+                </div>
+                <div class="testi-client-row">
+                  <div class="testi-avatar-circle">D</div>
+                  <div>
+                    <h4 class="testi-name">David K.</h4>
+                    <p class="testi-case">PT / CV Setup — Retail</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 (Dummy Item 2) -->
+            <div class="bali-testimonial-slide-item">
+              <div class="bali-testimonial-card">
+                <div>
+                  <div class="testi-stars-row">★ ★ ★ ★ ★</div>
+                  <p class="testi-quote-content">
+                    "They handled our Investor KITAS smoothly from start to finish. Truly the most reliable legal team in Bali!"
+                  </p>
+                </div>
+                <div class="testi-client-row">
+                  <div class="testi-avatar-circle">J</div>
+                  <div>
+                    <h4 class="testi-name">Jessica W.</h4>
+                    <p class="testi-case">Investor KITAS</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -408,7 +464,7 @@
          PAGE 5: PACKAGES (SERVICE PACKAGES)
          ========================================================================== -->
     <section class="section-bali-packages" id="pricing">
-      <div class="container-fluid px-lg-5">
+      <div class="container">
         <div class="text-center mb-5">
           <span class="bali-section-tag">PACKAGES</span>
           <h2 class="bali-section-heading">Service packages</h2>
@@ -487,7 +543,7 @@
          PAGE 6: GET IN TOUCH (CONTACT & FOOTER)
          ========================================================================== -->
     <section class="section-bali-contact" id="contact">
-      <div class="container-fluid px-lg-5">
+      <div class="container">
         <div class="row g-5 align-items-center">
           <!-- Left Column Details -->
           <div class="col-lg-6">
@@ -573,7 +629,7 @@
        BOTTOM FOOTER BAR
        ========================================================================== -->
   <footer class="bali-footer-bar">
-    <div class="container-fluid px-lg-5">
+    <div class="container">
       <div class="bali-footer-flex">
         <span>© 2026 Legalize Bali — part of Legalize.ID. All rights reserved.</span>
         <span>Jl. Wolter Monginsidi No.107A, Kebayoran Baru, South Jakarta</span>
@@ -581,19 +637,62 @@
     </div>
   </footer>
 
+  <!-- jQuery & Slick Carousel JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
   <!-- Bootstrap 5.3 Bundle JS -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-  <!-- WhatsApp Form Submission Interaction -->
+  <!-- Initialize Bali Testimonial Slider & WhatsApp Handler -->
   <script>
-    document.getElementById('baliConsultForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const name = document.getElementById('baliName').value.trim();
-      const phone = document.getElementById('baliPhone').value.trim();
-      const service = document.getElementById('baliService').value.trim();
+    $(document).ready(function () {
+      // Initialize Slick Carousel for Bali Testimonials
+      if ($.fn.slick && $('.bali-testimonial-slider-grid').length) {
+        $('.bali-testimonial-slider-grid').slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          prevArrow: $('.bali-slider-nav-btn.prev-btn'),
+          nextArrow: $('.bali-slider-nav-btn.next-btn'),
+          autoplay: true,
+          autoplaySpeed: 4500,
+          pauseOnHover: true,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false
+              }
+            }
+          ]
+        });
+      }
 
-      const msg = encodeURIComponent(`Hello Legalize Bali, my name is ${name} (${phone}). I would like to consult regarding: ${service}.`);
-      window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
+      // WhatsApp Form Submission Interaction
+      const baliForm = document.getElementById('baliConsultForm');
+      if (baliForm) {
+        baliForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = document.getElementById('baliName').value.trim();
+          const phone = document.getElementById('baliPhone').value.trim();
+          const service = document.getElementById('baliService').value.trim();
+
+          const msg = encodeURIComponent(`Hello Legalize Bali, my name is ${name} (${phone}). I would like to consult regarding: ${service}.`);
+          window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
+        });
+      }
     });
   </script>
 </body>

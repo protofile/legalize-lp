@@ -62,7 +62,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // --- 2. Active Navbar State on Scroll ---
+  // --- 2. Testimonials Slider (Slick) ---
+  if (window.jQuery && jQuery.fn.slick && jQuery('.testimonial-slider-grid').length) {
+    jQuery('.testimonial-slider-grid').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow: jQuery('.testimonial-nav-btn.prev-btn'),
+      nextArrow: jQuery('.testimonial-nav-btn.next-btn'),
+      autoplay: true,
+      autoplaySpeed: 4500,
+      pauseOnHover: true,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false
+          }
+        }
+      ]
+    });
+  }
+
+  // --- 3. Active Navbar State on Scroll ---
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
@@ -150,6 +183,10 @@ document.addEventListener('DOMContentLoaded', function () {
       slideIndicator.textContent = `Halaman ${currentSlideIndex + 1} / ${slides.length}`;
     }
 
+    if (window.jQuery && jQuery.fn.slick) {
+      jQuery('.testimonial-slider-grid, .portfolio-cards-grid').slick('setPosition');
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -159,6 +196,9 @@ document.addEventListener('DOMContentLoaded', function () {
       toggleFullBtn.classList.add('active');
       toggleSlideBtn.classList.remove('active');
       slides.forEach(s => s.classList.remove('slide-active'));
+      if (window.jQuery && jQuery.fn.slick) {
+        jQuery('.testimonial-slider-grid, .portfolio-cards-grid').slick('setPosition');
+      }
     });
 
     toggleSlideBtn.addEventListener('click', function () {

@@ -33,6 +33,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Container Max Width 1200px & Centered */
+.container,
+.container-fluid {
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 h1,
 h2,
 h3,
@@ -252,13 +260,32 @@ a {
 }
 
 /* Hero Right Image */
+.bali-hero-right-col {
+  position: relative;
+  min-height: 100%;
+}
+
 .bali-hero-right-img {
   background-image: url('../images/bali/pexels-juli-anggara-276311785-38336310.jpg');
   background-size: cover;
   background-position: center center;
-  min-height: 100%;
+  width: 100%;
+  min-height: 360px;
+  height: 100%;
   position: relative;
   opacity: 0.6;
+}
+
+@media (min-width: 992px) {
+  .bali-hero-right-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: calc(-1 * (100vw - 100%) / 2);
+    width: auto;
+    min-height: 100%;
+  }
 }
 
 /* ==========================================================================
@@ -268,6 +295,11 @@ a {
   padding-top: 5rem;
   padding-bottom: 5.5rem;
   background-color: #ffffff;
+}
+
+.section-bali-services .container {
+  position: relative;
+  z-index: 2;
 }
 
 .bali-section-tag {
@@ -546,6 +578,134 @@ a {
   background-color: #ffffff;
 }
 
+.bali-testimonial-slider-wrapper {
+  position: relative;
+  margin: 0 -0.75rem;
+  padding: 0.5rem 0 0.5rem;
+}
+
+.bali-slider-nav-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid var(--bali-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bali-text-dark);
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: var(--transition);
+}
+
+.bali-slider-nav-btn:hover {
+  background-color: var(--bali-primary);
+  color: #ffffff;
+  border-color: var(--bali-primary);
+}
+
+.bali-testimonial-slider-grid {
+  width: 100%;
+}
+
+.bali-testimonial-slider-grid .bali-testimonial-slide-item {
+  padding: 0.75rem;
+  height: auto;
+}
+
+.bali-testimonial-slider-grid.slick-initialized {
+  display: block;
+  overflow: hidden;
+}
+
+.bali-testimonial-slider-grid.slick-initialized .slick-track {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.bali-testimonial-slider-grid.slick-initialized .slick-slide {
+  height: auto !important;
+  display: flex !important;
+  padding: 0.75rem;
+  outline: none;
+}
+
+.bali-testimonial-slider-grid.slick-initialized .slick-slide>div {
+  display: flex !important;
+  width: 100%;
+  height: 100%;
+}
+
+.bali-testimonial-slider-grid.slick-initialized .bali-testimonial-slide-item {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100%;
+  height: 100% !important;
+  padding: 0;
+}
+
+.bali-testimonial-slider-grid.slick-initialized .bali-testimonial-card {
+  width: 100%;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  margin-bottom: 0;
+}
+
+/* Slick Dots for Bali Testimonials */
+.bali-testimonial-slider-grid .slick-dots {
+  position: relative;
+  bottom: 0;
+  margin-top: 2rem;
+  list-style: none;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+}
+
+.bali-testimonial-slider-grid .slick-dots li {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.bali-testimonial-slider-grid .slick-dots li button {
+  display: block !important;
+  width: 10px;
+  height: 10px;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 5px;
+  background: #cbd5e1;
+  border: none;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-indent: -9999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+}
+
+.bali-testimonial-slider-grid .slick-dots li button:before {
+  display: none !important;
+  content: '' !important;
+}
+
+.bali-testimonial-slider-grid .slick-dots li.slick-active button {
+  width: 32px;
+  background: var(--bali-primary);
+}
+
 .bali-testimonial-card {
   background-color: var(--bali-primary);
   border-radius: 16px;
@@ -555,7 +715,6 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 10px 25px rgba(31, 66, 57, 0.15);
   transition: var(--transition);
 }
 
@@ -576,7 +735,7 @@ a {
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.95);
   margin-bottom: 2rem;
-  min-height: 75px;
+  flex-grow: 1;
 }
 
 .testi-client-row {
