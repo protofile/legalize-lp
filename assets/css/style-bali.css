@@ -282,7 +282,7 @@ a {
     top: 0;
     bottom: 0;
     left: 0;
-    right: calc(-1 * (100vw - 100%) / 2);
+    right: calc(-1 * (100vw - 1190px) / 2);
     width: auto;
     min-height: 100%;
   }
